@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MarvinTeach — Kosten & Gebühren</title>
+  <meta name="description" content="Kostenübersicht für Forex & Edelmetalle (physisch & ETC/ETP) inkl. Diagrammen und Estimator." />
+  <meta name="theme-color" content="#0B0F1A" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <div class="mark">MT</div>
+        <div>
+          <div class="title">MarvinTeach</div>
+          <div class="sub">Kosten & Gebühren — Forex • Edelmetalle</div>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a class="pill" href="index.html">Start</a>
+        <a class="pill" href="#kosten">Kostenmodelle</a>
+        <a class="pill" href="#diagramme">Diagramme</a>
+        <a class="cta" href="#rechner"><span class="dot"></span> Estimator</a>
+
+        <button class="toggle" type="button" data-theme-toggle aria-label="Theme umschalten">
+          <span data-theme-icon>🌙</span>
+          <span data-theme-label>Dark</span>
+        </button>
+      </nav>
+    </header>
+
+    <section class="card">
+      <div class="badge"><span class="miniDot"></span> Übersicht: typische Kostenarten (keine Live-Daten)</div>
+      <h1>Kosten verstehen, bevor du irgendwas kaufst oder tradest.</h1>
+      <p class="lead">
+        Hier findest du die wichtigsten Kostenblöcke für <b>Forex</b>, <b>physische Edelmetalle</b> und <b>ETC/ETP</b>.
+        Unten sind Diagramme und ein Estimator, damit Nutzer ein Gefühl für Größenordnungen bekommen.
+      </p>
+      <div class="notice">
+        <b>Hinweis:</b> Educational only. Keine Anlageberatung. Echte Kosten variieren je nach Broker/Händler/Produkt.
+      </div>
+    </section>
+
+    <!-- COST MODELS -->
+    <section id="kosten" class="section">
+      <div class="sectionHeader">
+        <h2>Kostenmodelle</h2>
+        <div class="hint">Tabs öffnen → Details ansehen</div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Kosten Tabs">
+        <div class="tab active" data-tab="forex" role="tab" aria-selected="true">Forex</div>
+        <div class="tab" data-tab="metal-phys" role="tab" aria-selected="false">Edelmetalle (physisch)</div>
+        <div class="tab" data-tab="metal-etp" role="tab" aria-selected="false">Edelmetalle (börslich: ETC/ETP)</div>
+      </div>
+
+      <!-- Forex -->
+      <div class="panel active" id="forex">
+        <div class="grid2">
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a1)"></span> Forex – typische Kosten</div>
+            <ul class="list">
+              <li><b>Spread (Bid/Ask)</b> <span style="opacity:.75">→ Kosten im Kurs beim Ein-/Ausstieg.</span></li>
+              <li><b>Kommission</b> <span style="opacity:.75">→ oft bei Raw/ECN-Konten.</span></li>
+              <li><b>Overnight / Finanzierung</b> <span style="opacity:.75">→ Halten über Nacht.</span></li>
+              <li><b>Slippage</b> <span style="opacity:.75">→ schlechtere Ausführung bei News/Volatilität.</span></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a2)"></span> Praxis</div>
+            <div class="acc">
+              <details open>
+                <summary>Spread wirkt mit Frequenz <span class="kbd">+</span></summary>
+                <div class="detailsBody">Viele Trades → Spread summiert sich. Illiquide Zeiten → Spread kann steigen.</div>
+              </details>
+              <details>
+                <summary>Overnight wirkt mit Dauer <span class="kbd">+</span></summary>
+                <div class="detailsBody">Längeres Halten → Finanzierung kann größer werden als Spread.</div>
+              </details>
+              <details>
+                <summary>Slippage wirkt bei Ereignissen <span class="kbd">+</span></summary>
+                <div class="detailsBody">News/Stops → Ausführung kann abweichen. Das ist kein „Bug“, sondern Marktmechanik.</div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Physisch -->
+      <div class="panel" id="metal-phys">
+        <div class="grid2">
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a3)"></span> Physisch – typische Kosten</div>
+            <ul class="list">
+              <li><b>Premium/Aufgeld</b> <span style="opacity:.75">→ Marge + Herstellung/Prägung/Verfügbarkeit.</span></li>
+              <li><b>Händler-Spread</b> <span style="opacity:.75">→ Ankauf liegt oft unter Verkauf.</span></li>
+              <li><b>Versand/Versicherung</b> <span style="opacity:.75">→ abhängig von Wert & Versandart.</span></li>
+              <li><b>Lagerung</b> <span style="opacity:.75">→ Tresor/Schließfach/Versicherung.</span></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a4)"></span> Praxis</div>
+            <div class="acc">
+              <details open>
+                <summary>Break-even startet bei Premium+Spread <span class="kbd">+</span></summary>
+                <div class="detailsBody">Du musst häufig zuerst Premium + Händler-Spread „zurückholen“.</div>
+              </details>
+              <details>
+                <summary>Lagerung ist Sicherheits-„Service“ <span class="kbd">+</span></summary>
+                <div class="detailsBody">Bei größeren Werten macht Lagerung/Versicherung als Schutzkosten Sinn.</div>
+              </details>
+              <details>
+                <summary>Silber kann „kostenlastiger“ wirken <span class="kbd">+</span></summary>
+                <div class="detailsBody">Durch Volumen/Transport/ggf. Steuern kann physisches Silber relativ mehr Nebenkosten haben.</div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ETP -->
+      <div class="panel" id="metal-etp">
+        <div class="grid2">
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a2)"></span> ETC/ETP – typische Kosten</div>
+            <ul class="list">
+              <li><b>Ordergebühr</b> <span style="opacity:.75">→ Broker/Depot abhängig.</span></li>
+              <li><b>Börsen-Spread</b> <span style="opacity:.75">→ Liquidität/Handelszeit.</span></li>
+              <li><b>Produktkosten</b> <span style="opacity:.75">→ laufende Gebühren (produktabhängig).</span></li>
+              <li><b>Optional: Lieferung/Abwicklung</b> <span style="opacity:.75">→ wenn vorgesehen.</span></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a1)"></span> Praxis</div>
+            <div class="acc">
+              <details open>
+                <summary>Praktisch für Stückelung & Rebalancing <span class="kbd">+</span></summary>
+                <div class="detailsBody">Keine Versand-/Schließfachlogik, dafür Order + laufende Produktkosten.</div>
+              </details>
+              <details>
+                <summary>Factsheet-Checkliste <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  <ul>
+                    <li>Laufende Gebühren / Kosten</li>
+                    <li>Hinterlegung & Verwahrstelle</li>
+                    <li>Liquidität & typische Spreads</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGRAMS -->
+    <section id="diagramme" class="section">
+      <div class="sectionHeader">
+        <h2>Diagramme</h2>
+        <div class="hint">Beispielhafte Visualisierung (keine Live-Daten)</div>
+      </div>
+
+      <div class="grid2">
+        <div class="chartWrap">
+          <div class="chartTitle">
+            <b>Physischer Kauf: typische Kostenblöcke</b>
+            <span class="badge"><span class="miniDot"></span> Beispiel-Anteile</span>
+          </div>
+          <div class="chartNote" style="margin-top:6px;">
+            Premium/Spread dominieren häufig; Versand/Lagerung sind abhängig von Menge und Setup.
+          </div>
+
+          <svg viewBox="0 0 320 200" width="100%" height="240" aria-label="Donut Chart physische Kosten" style="margin-top:10px;">
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="18"/>
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(245,158,11,.92)" stroke-width="18"
+              stroke-linecap="round" stroke-dasharray="175 389.6" stroke-dashoffset="0" transform="rotate(-90 120 110)"/>
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(34,211,238,.92)" stroke-width="18"
+              stroke-linecap="round" stroke-dasharray="136 389.6" stroke-dashoffset="-180" transform="rotate(-90 120 110)"/>
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(139,92,246,.92)" stroke-width="18"
+              stroke-linecap="round" stroke-dasharray="39 389.6" stroke-dashoffset="-320" transform="rotate(-90 120 110)"/>
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(52,211,153,.92)" stroke-width="18"
+              stroke-linecap="round" stroke-dasharray="39 389.6" stroke-dashoffset="-360" transform="rotate(-90 120 110)"/>
+
+            <text x="120" y="108" text-anchor="middle" fill="rgba(234,240,255,.92)" font-size="14" font-weight="900">PHYSISCH</text>
+            <text x="120" y="128" text-anchor="middle" fill="rgba(234,240,255,.62)" font-size="12">Kostenblöcke</text>
+
+            <g transform="translate(210 40)" font-size="12" fill="rgba(234,240,255,.80)">
+              <rect x="0" y="0" width="10" height="10" rx="2" fill="rgba(245,158,11,.92)"></rect>
+              <text x="16" y="10">Premium/Aufgeld</text>
+
+              <rect x="0" y="22" width="10" height="10" rx="2" fill="rgba(34,211,238,.92)"></rect>
+              <text x="16" y="32">Händler-Spread</text>
+
+              <rect x="0" y="44" width="10" height="10" rx="2" fill="rgba(139,92,246,.92)"></rect>
+              <text x="16" y="54">Versand/Versich.</text>
+
+              <rect x="0" y="66" width="10" height="10" rx="2" fill="rgba(52,211,153,.92)"></rect>
+              <text x="16" y="76">Lagerung/sonst.</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="chartWrap">
+          <div class="chartTitle">
+            <b>Vergleich: Kostenquellen (Struktur)</b>
+            <span class="badge"><span class="miniDot" style="background:var(--a2)"></span> Forex vs. Physisch vs. ETP</span>
+          </div>
+          <div class="chartNote" style="margin-top:6px;">
+            Stacked-Bars zeigen „wo“ Kosten typischerweise herkommen (kein Prozent-Claim).
+          </div>
+
+          <svg viewBox="0 0 520 240" width="100%" height="260" aria-label="Stacked Bars Kostenstruktur" style="margin-top:10px;">
+            <g fill="rgba(234,240,255,.75)" font-size="12">
+              <text x="60" y="28">Forex</text>
+              <text x="230" y="28">Physisch</text>
+              <text x="410" y="28">ETC/ETP</text>
+            </g>
+
+            <g>
+              <rect x="50"  y="50" width="110" height="160" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)"/>
+              <rect x="220" y="50" width="110" height="160" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)"/>
+              <rect x="400" y="50" width="110" height="160" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)"/>
+            </g>
+
+            <!-- Forex -->
+            <rect x="62" y="168" width="86" height="32" rx="10" fill="rgba(34,211,238,.92)"/>
+            <rect x="62" y="126" width="86" height="38" rx="10" fill="rgba(139,92,246,.92)"/>
+            <rect x="62" y="82"  width="86" height="40" rx="10" fill="rgba(245,158,11,.92)"/>
+            <rect x="62" y="60"  width="86" height="18" rx="10" fill="rgba(52,211,153,.92)"/>
+
+            <!-- Physisch -->
+            <rect x="232" y="160" width="86" height="40" rx="10" fill="rgba(245,158,11,.92)"/>
+            <rect x="232" y="112" width="86" height="44" rx="10" fill="rgba(34,211,238,.92)"/>
+            <rect x="232" y="78"  width="86" height="30" rx="10" fill="rgba(139,92,246,.92)"/>
+            <rect x="232" y="60"  width="86" height="16" rx="10" fill="rgba(52,211,153,.92)"/>
+
+            <!-- ETP -->
+            <rect x="412" y="166" width="86" height="34" rx="10" fill="rgba(34,211,238,.92)"/>
+            <rect x="412" y="124" width="86" height="38" rx="10" fill="rgba(139,92,246,.92)"/>
+            <rect x="412" y="82"  width="86" height="40" rx="10" fill="rgba(245,158,11,.92)"/>
+            <rect x="412" y="60"  width="86" height="18" rx="10" fill="rgba(52,211,153,.92)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTIMATOR -->
+    <section id="rechner" class="section">
+      <div class="sectionHeader">
+        <h2>Kosten-Estimator</h2>
+        <div class="hint">Grobe Orientierung, keine Live-Kurse</div>
+      </div>
+
+      <div class="box">
+        <div class="badge"><span class="miniDot" style="background:var(--a2)"></span> Eingaben</div>
+
+        <div class="form">
+          <div>
+            <label for="mode">Modus</label>
+            <select id="mode">
+              <option value="forex">Forex (Spread + Kommission + Overnight)</option>
+              <option value="phys">Physisch (Premium + Händler-Spread + Versand + Lagerung)</option>
+              <option value="etp">ETC/ETP (Order + Börsen-Spread + Produktkosten)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="amount">Volumen / Wert (€)</label>
+            <input id="amount" type="number" value="1000" min="0" step="10" />
+          </div>
+
+          <div>
+            <label for="days">Haltedauer (Tage)</label>
+            <input id="days" type="number" value="7" min="0" step="1" />
+          </div>
+
+          <div>
+            <label for="spreadPct">Spread / Händler-Spread (%)</label>
+            <input id="spreadPct" type="number" value="0.20" min="0" step="0.01" />
+          </div>
+
+          <div>
+            <label for="feeFixed">Fixe Gebühren (€) (Order/Versand/etc.)</label>
+            <input id="feeFixed" type="number" value="5" min="0" step="0.50" />
+          </div>
+
+          <div>
+            <label for="ratePct">Overnight / Produktkosten p.a. (%)</label>
+            <input id="ratePct" type="number" value="3.00" min="0" step="0.10" />
+          </div>
+
+          <div>
+            <label for="premiumPct">Premium/Aufgeld (%) (physisch)</label>
+            <input id="premiumPct" type="number" value="2.50" min="0" step="0.10" />
+          </div>
+
+          <div>
+            <label for="commissionPct">Kommission (%) (Forex)</label>
+            <input id="commissionPct" type="number" value="0.05" min="0" step="0.01" />
+          </div>
+
+          <div>
+            <label for="storagePct">Lagerung p.a. (%) (physisch)</label>
+            <input id="storagePct" type="number" value="0.60" min="0" step="0.10" />
+          </div>
+        </div>
+
+        <div class="calcRow">
+          <button class="btn" id="calcBtn">Kosten berechnen</button>
+          <div class="result" id="out">
+            Klick auf <b>„Kosten berechnen“</b> — danach werden Änderungen live aktualisiert.
+          </div>
+        </div>
+
+        <div class="footer">
+          <b>Disclaimer:</b> Stark vereinfacht. Für echte Gebühren: Preislisten/Factsheets der Anbieter prüfen.
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> MarvinTeach. Educational content only. Kein Angebot, keine Anlageberatung.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
