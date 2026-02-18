@@ -3,346 +3,950 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MarvinTeach™ — Forex & Gold Masterclass (Satire)</title>
-  <meta name="description" content="MarvinTeach™ (Satire) – Eine professionell aussehende Parodie auf Trading-Gurus: Forex, Gold & 'Mindset' – mit Augenzwinkern." />
-  <meta name="theme-color" content="#0b1220" />
+  <title>MarvinTeach — Kosten & Gebühren (Forex & Edelmetalle)</title>
+  <meta name="description" content="Übersicht typischer Kostenarten beim Forex-Trading und bei Edelmetallen (physisch & börsengehandelt). Educational only. Keine Anlageberatung." />
+  <meta name="theme-color" content="#0B0F1A" />
 
   <style>
+    /* ==============================
+       Design System (modern / different)
+       ============================== */
     :root{
-      --bg:#0b1220;
-      --card:#0f1b33;
-      --muted:#9fb0d0;
-      --text:#eaf0ff;
-      --line:rgba(255,255,255,.08);
-      --accent:#78a6ff;
-      --accent2:#ffd36a;
-      --good:#2ee59d;
-      --bad:#ff6b6b;
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1100px;
+      --bg: #070A12;
+      --bg2:#0B0F1A;
+      --card:#0E1426;
+      --card2:#0B1122;
+      --text:#EAF0FF;
+      --muted: rgba(234,240,255,.72);
+      --muted2: rgba(234,240,255,.55);
+      --line: rgba(255,255,255,.08);
+      --line2: rgba(255,255,255,.12);
+      --shadow: 0 30px 80px rgba(0,0,0,.55);
+      --shadow2: 0 10px 40px rgba(0,0,0,.35);
+      --r: 18px;
+
+      --a1:#8B5CF6; /* violet */
+      --a2:#22D3EE; /* cyan */
+      --a3:#F59E0B; /* amber */
+      --a4:#34D399; /* green */
+      --bad:#FB7185; /* rose */
+      --ok:#34D399;
+      --warn:#FBBF24;
+
+      --max: 1180px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 20% 0%, rgba(120,166,255,.22), transparent 60%),
-                                   radial-gradient(900px 500px at 80% 10%, rgba(255,211,106,.16), transparent 60%),
-                                   var(--bg);
-              color:var(--text); font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Apple Color Emoji","Segoe UI Emoji";}
-    a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .logo{
-      width:38px;height:38px;border-radius:12px;
-      background:linear-gradient(135deg, rgba(120,166,255,.95), rgba(255,211,106,.95));
-      box-shadow:0 10px 25px rgba(120,166,255,.18);
-      display:grid;place-items:center;font-weight:900;color:#0b1220;
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(139,92,246,.28), transparent 60%),
+        radial-gradient(850px 650px at 85% -5%, rgba(34,211,238,.22), transparent 55%),
+        radial-gradient(900px 650px at 50% 120%, rgba(245,158,11,.15), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
     }
-    .navlinks{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-    .pill{padding:10px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--muted)}
-    .pill:hover{border-color:rgba(120,166,255,.45);color:var(--text)}
-    .btn{
-      padding:11px 14px;border-radius:999px;border:1px solid rgba(120,166,255,.45);
-      background:linear-gradient(135deg, rgba(120,166,255,.18), rgba(255,211,106,.08));
-      text-decoration:none; display:inline-flex; gap:8px; align-items:center;
-      box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 22px 18px 70px; }
+
+    /* Top nav */
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding: 12px 0 18px;
     }
-    .btn:hover{transform:translateY(-1px)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch;margin-top:16px}
-    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .mark{
+      width:44px; height:44px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(139,92,246,.95), rgba(34,211,238,.9));
+      box-shadow: 0 18px 55px rgba(139,92,246,.22);
+      display:grid; place-items:center;
+      font-weight: 900;
+      letter-spacing:.5px;
+      color:#061022;
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:before{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), transparent 45%);
+      transform: rotate(12deg);
+    }
+    .brand .title{ font-weight:900; letter-spacing:.2px; line-height:1.05; }
+    .brand .sub{ color:var(--muted2); font-size:12px; margin-top:2px; }
+    .navlinks{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end; }
+
+    .pill{
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      backdrop-filter: blur(10px);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .pill:hover{ transform: translateY(-1px); border-color: rgba(34,211,238,.32); background: rgba(255,255,255,.05); }
+
+    .cta{
+      padding: 10px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(139,92,246,.40);
+      background: linear-gradient(135deg, rgba(139,92,246,.18), rgba(34,211,238,.10));
+      box-shadow: var(--shadow2);
+      transition: transform .15s ease, filter .15s ease;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .cta:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+    .dot{
+      width:9px;height:9px;border-radius:99px;background:var(--a2);
+      box-shadow:0 0 18px rgba(34,211,238,.55);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid; grid-template-columns: 1.08fr .92fr; gap: 16px;
+      align-items:stretch;
+      margin-top: 6px;
+    }
+    @media (max-width: 960px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:22px; position:relative; overflow:hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      position:relative;
+      overflow:hidden;
     }
+    .card::after{
+      content:"";
+      position:absolute; inset:-60% -60% auto auto;
+      width:520px; height:520px;
+      background: radial-gradient(circle at 35% 35%, rgba(34,211,238,.16), transparent 55%);
+      transform: rotate(20deg);
+      pointer-events:none;
+    }
+
+    h1{
+      font-size: 44px; line-height: 1.05; margin: 10px 0 10px;
+      letter-spacing: -.6px;
+    }
+    @media (max-width: 560px){ h1{ font-size: 36px; } }
+
+    .lead{ color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0 0 14px; }
+    .chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px; }
+    .chip{
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .chip b{ color: var(--text); }
+
+    .notice{
+      margin-top: 14px;
+      border: 1px solid rgba(245,158,11,.25);
+      background: rgba(245,158,11,.08);
+      border-radius: 14px;
+      padding: 12px 12px;
+      color: rgba(255,244,214,.95);
+      line-height:1.6;
+      font-size: 13px;
+    }
+
+    /* Sidebar card */
+    .glass{
+      background: linear-gradient(180deg, rgba(14,20,38,.86), rgba(11,17,34,.72));
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 18px;
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(14px);
+      position:relative;
+      overflow:hidden;
+    }
+    .glass::before{
+      content:"";
+      position:absolute; inset:-35% auto auto -35%;
+      width:520px;height:520px;
+      background: radial-gradient(circle at 55% 45%, rgba(139,92,246,.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    .kpis{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px; margin-top: 12px;
+    }
+    @media (max-width: 960px){ .kpis{ grid-template-columns: 1fr; } }
+    .kpi{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(0,0,0,.18);
+      padding: 12px;
+    }
+    .kpi .big{ font-size: 20px; font-weight: 900; letter-spacing:-.3px; }
+    .kpi .small{ color: var(--muted2); font-size: 12px; line-height: 1.45; margin-top: 6px; }
+
+    /* Section layout */
+    .section{ margin-top: 16px; }
+    .sectionHeader{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:10px; flex-wrap:wrap;
+      margin: 18px 0 10px;
+    }
+    h2{
+      font-size: 20px; margin: 0;
+      letter-spacing: -.3px;
+    }
+    .hint{ color: var(--muted2); font-size: 12px; }
+
+    /* Tabs */
+    .tabs{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .tab{
+      cursor:pointer;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      user-select:none;
+    }
+    .tab:hover{ transform: translateY(-1px); border-color: rgba(139,92,246,.32); background: rgba(255,255,255,.05); }
+    .tab.active{
+      color: var(--text);
+      border-color: rgba(34,211,238,.45);
+      background: linear-gradient(135deg, rgba(34,211,238,.12), rgba(139,92,246,.10));
+    }
+
+    .panel{
+      margin-top: 12px;
+      display:none;
+    }
+    .panel.active{ display:block; }
+
+    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 960px){ .grid2{ grid-template-columns:1fr; } }
+
+    .box{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(0,0,0,.16);
+      padding: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 8px 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .list li:first-child{ border-top: 0; }
     .badge{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:9px 12px;border-radius:999px;border:1px dashed rgba(255,211,106,.55);
-      color:#ffe7a8;background:rgba(255,211,106,.08);
-      font-size:13px;
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 12px;
     }
-    h1{font-size:44px;line-height:1.05;margin:14px 0 10px}
-    @media (max-width: 540px){ h1{font-size:36px} }
-    .sub{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 16px}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .ctaPrimary{
-      background:linear-gradient(135deg, rgba(120,166,255,.95), rgba(255,211,106,.85));
-      color:#0b1220; font-weight:800; border:none; padding:12px 16px; border-radius:999px;
-      text-decoration:none; display:inline-flex; align-items:center; gap:10px;
-      box-shadow:0 18px 50px rgba(120,166,255,.20);
+    .miniDot{ width:8px;height:8px;border-radius:99px;background:var(--a3); box-shadow:0 0 14px rgba(245,158,11,.35); }
+
+    /* Accordions */
+    .acc{ margin-top: 10px; }
+    details{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      padding: 10px 12px;
+      margin-top: 10px;
     }
-    .ctaSecondary{color:var(--text)}
-    .tiny{font-size:12px;color:rgba(234,240,255,.65);line-height:1.5;margin-top:10px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
-    .kpi{padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.16)}
-    .kpi b{display:block;font-size:20px;margin-bottom:6px}
-    .kpi span{color:var(--muted);font-size:13px}
-    .side{
-      background:linear-gradient(180deg, rgba(15,27,51,.85), rgba(15,27,51,.55));
-      border:1px solid var(--line); border-radius:var(--radius); padding:22px;
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      font-weight:800;
+      letter-spacing:-.2px;
     }
-    .meter{margin-top:12px;padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.18)}
-    .meterTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
-    .fill{height:100%;width:72%;background:linear-gradient(90deg, rgba(120,166,255,.9), rgba(46,229,157,.8))}
-    .section{margin-top:22px}
-    .section h2{margin:0 0 10px;font-size:22px}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width: 920px){ .features{grid-template-columns:1fr} }
-    .feature{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.14)}
-    .feature .icon{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;
-      background:rgba(120,166,255,.14);border:1px solid rgba(120,166,255,.25); margin-bottom:10px}
-    .feature p{margin:6px 0 0;color:var(--muted);line-height:1.6}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width: 920px){ .split{grid-template-columns:1fr} }
-    .quote{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.14)}
-    .quote p{margin:0;color:var(--muted);line-height:1.6}
-    .quote b{display:block;margin-top:10px}
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width: 920px){ .pricing{grid-template-columns:1fr} }
-    .plan{padding:18px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.16)}
-    .price{font-size:28px;font-weight:900;margin:10px 0}
-    .list{margin:12px 0 0;padding:0;list-style:none;color:var(--muted);line-height:1.9}
-    .tag{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px}
-    .footer{margin:26px 0 10px;color:rgba(234,240,255,.65);font-size:12px;line-height:1.6}
-    .divider{height:1px;background:var(--line);margin:18px 0}
-    .warn{
-      border-left:4px solid var(--accent2);
-      padding:12px 12px 12px 14px;
-      background:rgba(255,211,106,.08);
-      border-radius:14px;
-      color:rgba(255,245,220,.95);
-      font-size:13px; line-height:1.55;
+    summary::-webkit-details-marker{ display:none; }
+    .detailsBody{ color: var(--muted); font-size: 14px; line-height: 1.7; margin-top: 10px; }
+    .detailsBody ul{ margin:10px 0 0 18px; color: var(--muted); }
+
+    /* Diagram / charts */
+    .chartWrap{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(0,0,0,.18);
+      padding: 14px;
+      overflow:hidden;
+    }
+    .chartTitle{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .chartTitle b{ letter-spacing:-.2px; }
+    .chartNote{ color: var(--muted2); font-size: 12px; line-height:1.45; }
+
+    .legend{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .leg{
+      display:flex; gap:8px; align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .sw{ width:10px;height:10px;border-radius:3px; }
+    .sw.v{ background: rgba(139,92,246,.9); }
+    .sw.c{ background: rgba(34,211,238,.9); }
+    .sw.a{ background: rgba(245,158,11,.92); }
+    .sw.g{ background: rgba(52,211,153,.9); }
+
+    /* Estimator */
+    .form{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;
+    }
+    @media (max-width: 960px){ .form{ grid-template-columns: 1fr; } }
+    label{ display:block; color: var(--muted2); font-size: 12px; margin-bottom: 6px; }
+    input, select{
+      width:100%;
+      padding: 11px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline:none;
+    }
+    input:focus, select:focus{ border-color: rgba(34,211,238,.45); box-shadow: 0 0 0 4px rgba(34,211,238,.10); }
+    .calcRow{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top: 10px; }
+    .btn{
+      cursor:pointer;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border:1px solid rgba(34,211,238,.42);
+      background: linear-gradient(135deg, rgba(34,211,238,.12), rgba(139,92,246,.10));
+      color: var(--text);
+      font-weight: 800;
+      box-shadow: var(--shadow2);
+      transition: transform .15s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .result{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      flex:1;
+      min-width: 240px;
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    .footer{
+      margin-top: 18px;
+      color: rgba(234,240,255,.58);
+      font-size: 12px;
+      line-height: 1.7;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 14px;
     }
     .kbd{
-      font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-      background:rgba(255,255,255,.08);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       border:1px solid var(--line);
-      padding:2px 7px;border-radius:8px;color:rgba(234,240,255,.85)
+      background: rgba(255,255,255,.05);
+      padding: 2px 7px;
+      border-radius: 8px;
+      color: rgba(234,240,255,.85);
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+    <!-- NAV -->
     <header class="nav">
-      <a class="brand" href="#top" aria-label="MarvinTeach">
-        <div class="logo">MT</div>
+      <a class="brand" href="#top" aria-label="MarvinTeach Start">
+        <div class="mark">MT</div>
         <div>
-          <div style="font-weight:900;letter-spacing:.2px">MarvinTeach™</div>
-          <div style="color:var(--muted);font-size:12px;margin-top:2px">Forex • Gold • “Mindset” (Satire)</div>
+          <div class="title">MarvinTeach</div>
+          <div class="sub">Kosten & Gebühren — Forex • Edelmetalle</div>
         </div>
       </a>
 
       <nav class="navlinks">
-        <a class="pill" href="#kurs">Kurs</a>
-        <a class="pill" href="#resultate">Resultate</a>
-        <a class="pill" href="#preise">Preise</a>
-        <a class="btn" href="#cta">Kostenloses “Alpha”-PDF ▸</a>
+        <a class="pill" href="#kosten">Kostenmodelle</a>
+        <a class="pill" href="#diagramme">Diagramme</a>
+        <a class="pill" href="#rechner">Estimator</a>
+        <a class="cta" href="#rechner"><span class="dot"></span> Gebühren grob rechnen</a>
       </nav>
     </header>
 
-    <main id="top" class="hero">
-      <section class="card">
-        <span class="badge">⚠️ Parodie / Satire • Keine echte Finanzberatung</span>
-        <h1>Trade Forex. Staple Gold. <br/>Werde die Legende in deinem Discord.</h1>
-        <p class="sub">
-          Willkommen bei <b>MarvinTeach™</b>: Eine professionell aussehende (aber humorvolle) Seite über “Forex & Edelmetalle”.
-          Hier lernst du die heiligen drei Regeln: <span class="kbd">Risk</span>, <span class="kbd">Disziplin</span>, <span class="kbd">Memes</span>.
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="card">
+        <div class="badge"><span class="miniDot"></span> Fokus: Transparenz bei Kosten (ohne Marktdaten)</div>
+        <h1>Was kostet Forex & was kostet Gold wirklich?</h1>
+        <p class="lead">
+          Diese Seite zeigt dir die <b>typischen Kostenarten</b>, die im Alltag oft unterschätzt werden:
+          beim <b>Forex-Trading</b> (Spread, Kommission, Overnight, Slippage) und bei <b>Edelmetallen</b>
+          (Aufgeld/Spread, Lagerung, Versand/Versicherung, Produktgebühren bei ETC/ETP).
         </p>
 
-        <div class="ctaRow" id="cta">
-          <a class="ctaPrimary" href="#preise">Jetzt “Mentoring” sichern →</a>
-          <a class="btn ctaSecondary" href="#kurs">Curriculum ansehen</a>
+        <div class="chips">
+          <div class="chip"><b>Forex:</b> Spread • Kommission • Overnight • Slippage</div>
+          <div class="chip"><b>Physisch:</b> Premium/Aufgeld • Händler-Spread • Lagerung</div>
+          <div class="chip"><b>Börslich:</b> Ordergebühr • Börsen-Spread • Produktkosten</div>
         </div>
 
-        <div class="grid">
-          <div class="kpi">
-            <b>+0.01%</b>
-            <span>Durchschnittliche “Performance” pro Woche*<br/><small>* gemessen in Hoffnung.</small></span>
-          </div>
-          <div class="kpi">
-            <b>24/7</b>
-            <span>Mindset-Support (Auto-Reply)</span>
-          </div>
-          <div class="kpi">
-            <b>∞</b>
-            <span>Ausreden, warum der Trade “eigentlich gut war”</span>
-          </div>
+        <div class="notice">
+          <b>Hinweis:</b> Educational only — keine Anlageberatung. Kosten hängen stark von Broker, Produkt, Liquidität,
+          Handelszeit und Ordertyp ab. Nutze zum schnellen Verständnis den Estimator unten.
         </div>
+      </div>
 
-        <div class="divider"></div>
+      <aside class="glass">
+        <div style="position:relative; z-index:1;">
+          <div class="badge"><span class="miniDot" style="background:var(--a2)"></span> Quick-Check</div>
+          <div style="margin-top:10px; font-weight:900; font-size:20px; letter-spacing:-.3px;">
+            Die 3 größten „Kosten-Fallen“
+          </div>
+          <div style="color:var(--muted); line-height:1.65; margin-top:8px;">
+            1) <b>Overnight/Finanzierung</b> (bei gehebelten Positionen)<br/>
+            2) <b>Spread + Slippage</b> (News/Volatilität)<br/>
+            3) <b>Aufgeld & Händler-Spread</b> (bei physischem Metall)
+          </div>
 
-        <div class="warn">
-          <b>Wichtig:</b> Diese Seite ist als <b>Satire/Parodie</b> gedacht. Kein Echtgeld-Rat, keine “Garantien”.
-          Wenn du echte Finanzbildung willst: nutze seriöse Quellen, lies Risikohinweise, und sei skeptisch bei “sicheren Gewinnen”.
-        </div>
-
-        <p class="tiny">
-          “Forex” und “Gold” werden hier absichtlich überspitzt dargestellt. <br/>
-          Für echte Entscheidungen: unabhängige Recherche, Kosten & Risiken verstehen.
-        </p>
-      </section>
-
-      <aside class="side">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
-          <div>
-            <div class="tag">LIVE: “London Session”</div>
-            <h2 style="margin:12px 0 6px">Marvin’s Signal-Board</h2>
-            <div style="color:var(--muted);line-height:1.6">
-              Ein Dashboard, das so aussieht, als würde hier Magie passieren.
-              In Wahrheit: <b>Konfetti + Charts</b>.
+          <div class="kpis">
+            <div class="kpi">
+              <div class="big">Spread</div>
+              <div class="small">„Sofortkosten“ beim Ein-/Ausstieg (Bid/Ask).</div>
             </div>
-          </div>
-          <div class="tag" title="Satire">🧪 Beta</div>
-        </div>
-
-        <div class="meter">
-          <div class="meterTop">
-            <b>Confidence-Index</b>
-            <span style="color:var(--good);font-weight:800">72%</span>
-          </div>
-          <div class="bar"><div class="fill"></div></div>
-          <div style="color:var(--muted);font-size:12px;margin-top:10px">
-            Je mehr Kerzen, desto mehr Meinung.
-          </div>
-        </div>
-
-        <div class="section">
-          <h2 id="kurs">Curriculum</h2>
-          <div class="features">
-            <div class="feature">
-              <div class="icon">📈</div>
-              <b>Forex Basics</b>
-              <p>Spreads, Pips & warum “Hebel” ein gefährliches Wort ist.</p>
+            <div class="kpi">
+              <div class="big">Overnight</div>
+              <div class="small">Kann sich täglich addieren (je nach Produkt & Richtung).</div>
             </div>
-            <div class="feature">
-              <div class="icon">🪙</div>
-              <b>Edelmetalle</b>
-              <p>Gold/Silber als “Investment” – plus die mythische Frage: Wo lagern wir das eigentlich?</p>
+            <div class="kpi">
+              <div class="big">Premium</div>
+              <div class="small">Aufgeld bei Barren/Münzen + Verkaufskurs darunter.</div>
             </div>
-            <div class="feature">
-              <div class="icon">🧠</div>
-              <b>Mindset</b>
-              <p>Disziplin, Risiko & die Kunst, nicht jedem TikTok-Chart zu glauben.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <h2>Freebie</h2>
-          <div class="quote">
-            <p><b>“Alpha-PDF: 7 Kerzen, 7 Wahrheiten”</b><br/>
-            Drücke <span class="kbd">Strg</span> + <span class="kbd">S</span>, speichere diese Seite und nenne es “Research”.</p>
-            <b style="margin-top:10px">Preis: 0€ • Wert: dramatisch</b>
           </div>
         </div>
       </aside>
-    </main>
+    </section>
 
-    <section class="card section" id="resultate" style="margin-top:18px">
-      <h2>Resultate (mit Augenzwinkern)</h2>
-      <div class="split">
-        <div class="quote">
-          <p>“Ich hab endlich verstanden, dass ich nichts verstanden habe. 10/10.”</p>
-          <b>— Kevin, “Scalper”</b>
-        </div>
-        <div class="quote">
-          <p>“Seit MarvinTeach weiß ich: Der Markt ist gegen mich. Das ist beruhigend.”</p>
-          <b>— Lara, Gold-Hodlerin</b>
+    <!-- SECTION: COST MODELS -->
+    <section id="kosten" class="section">
+      <div class="sectionHeader">
+        <h2>Kostenmodelle</h2>
+        <div class="hint">Tabs öffnen → Details & Beispiele ansehen</div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Kosten Tabs">
+        <div class="tab active" data-tab="forex" role="tab" aria-selected="true">Forex</div>
+        <div class="tab" data-tab="metal-phys" role="tab" aria-selected="false">Edelmetalle (physisch)</div>
+        <div class="tab" data-tab="metal-etp" role="tab" aria-selected="false">Edelmetalle (börslich: ETC/ETP)</div>
+      </div>
+
+      <!-- Forex panel -->
+      <div class="panel active" id="forex">
+        <div class="grid2">
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a1)"></span> Forex – typische Kostenarten</div>
+            <ul class="list">
+              <li><b>Spread (Bid/Ask)</b> <span style="color:var(--muted2)">→ Kosten im Kurs (Ein-/Ausstieg).</span></li>
+              <li><b>Kommission</b> <span style="color:var(--muted2)">→ v. a. bei „Raw/ECN“ Konten.</span></li>
+              <li><b>Overnight / Finanzierung</b> <span style="color:var(--muted2)">→ Halten über Nacht, oft unterschätzt.</span></li>
+              <li><b>Slippage</b> <span style="color:var(--muted2)">→ Ausführung schlechter als erwartet (News/Volatilität).</span></li>
+              <li><b>Währungsumrechnung</b> <span style="color:var(--muted2)">→ Mark-up bei Ein-/Auszahlung oder Kontowährung.</span></li>
+              <li><b>Ein-/Auszahlungsgebühren</b> <span style="color:var(--muted2)">→ abhängig von Provider/Bank/Broker.</span></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a2)"></span> Praxis-Hinweise</div>
+
+            <div class="acc">
+              <details open>
+                <summary>Warum Spread nicht „nur ein paar Pips“ sind <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  Du bezahlst den Spread beim Einstieg indirekt sofort. Je häufiger du tradest, desto stärker wirkt er.
+                  Bei illiquiden Zeiten oder exotischen Paaren kann er deutlich steigen.
+                </div>
+              </details>
+
+              <details>
+                <summary>Overnight/Finanzierung als Kosten-Treiber <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  Wenn du Positionen länger hältst, kann die Finanzierung den Spread „überholen“.
+                  Das gilt besonders bei gehebelten Produkten. Prüfe die Konditionen im Broker-Preisblatt.
+                </div>
+              </details>
+
+              <details>
+                <summary>Slippage & Stop-Orders <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  Slippage tritt häufig bei schnellen Bewegungen auf (z. B. News). Stop-Orders sind nicht immer
+                  „garantiert“ zum gewünschten Preis (produktabhängig).
+                </div>
+              </details>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="divider"></div>
+      <!-- Physical metals panel -->
+      <div class="panel" id="metal-phys">
+        <div class="grid2">
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a3)"></span> Physisch – Kostenarten</div>
+            <ul class="list">
+              <li><b>Aufgeld/Premium</b> <span style="color:var(--muted2)">→ Herstellung/Prägung/Handel/Verfügbarkeit.</span></li>
+              <li><b>Händler-Spread</b> <span style="color:var(--muted2)">→ Ankaufkurs oft unter Verkaufskurs.</span></li>
+              <li><b>Versand & Versicherung</b> <span style="color:var(--muted2)">→ abhängig von Wert, Versandart.</span></li>
+              <li><b>Lagerung</b> <span style="color:var(--muted2)">→ Tresor/Schließfach/Versicherung laufend.</span></li>
+              <li><b>Steuer (produktabhängig)</b> <span style="color:var(--muted2)">→ hängt von Metall & Jurisdiktion ab.</span></li>
+            </ul>
+          </div>
 
-      <div class="features">
-        <div class="feature">
-          <div class="icon">🧾</div>
-          <b>Risikomanagement</b>
-          <p>Stop-Loss ist nicht “optional”, sondern dein Sicherheitsgurt.</p>
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a4)"></span> Praxis-Hinweise</div>
+
+            <div class="acc">
+              <details open>
+                <summary>Was du beim Kauf „real“ bezahlst <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  Der wichtigste Block ist meist: <b>Premium + Händler-Spread</b>. Das ist der Abstand, den du
+                  erst wieder „reinholen“ musst, bevor du überhaupt im Plus bist.
+                </div>
+              </details>
+
+              <details>
+                <summary>Warum Lagerung/Versicherung trotzdem Sinn machen kann <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  Wer größere Werte hält, kalkuliert Lagerung wie eine Sicherheits-/Servicegebühr.
+                  Für Kleinstmengen kann es dagegen unverhältnismäßig wirken.
+                </div>
+              </details>
+
+              <details>
+                <summary>Gold vs. Silber (Kostenlogik) <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  Silber ist bei physischen Käufen oft „kostenlastiger“ (Aufgeld/Steuer/Volumen/Transport),
+                  Gold wirkt häufig effizienter – aber das hängt vom konkreten Produkt & Händler ab.
+                </div>
+              </details>
+            </div>
+          </div>
         </div>
-        <div class="feature">
-          <div class="icon">🕵️</div>
-          <b>Scam-Detektor</b>
-          <p>Wenn jemand “garantiert” sagt: lauf. Wenn er “100x Hebel” sagt: lauf schneller.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🧯</div>
-          <b>Reality-Check</b>
-          <p>Charts sind kein Schicksal, sondern Daten + Wahrscheinlichkeit + Emotionen.</p>
+      </div>
+
+      <!-- Metals ETP panel -->
+      <div class="panel" id="metal-etp">
+        <div class="grid2">
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a2)"></span> Börslich (ETC/ETP) – Kostenarten</div>
+            <ul class="list">
+              <li><b>Ordergebühr</b> <span style="color:var(--muted2)">→ vom Broker/Depotmodell.</span></li>
+              <li><b>Börsen-Spread</b> <span style="color:var(--muted2)">→ Liquidität/Handelsplatz/Zeiten.</span></li>
+              <li><b>Produktkosten</b> <span style="color:var(--muted2)">→ laufende Gebühren (produktabhängig).</span></li>
+              <li><b>Tracking-Effekte</b> <span style="color:var(--muted2)">→ Abweichungen vom Spotpreis möglich.</span></li>
+              <li><b>Optional: Auslieferung/Abwicklung</b> <span style="color:var(--muted2)">→ wenn physische Lieferung vorgesehen.</span></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <div class="badge"><span class="miniDot" style="background:var(--a1)"></span> Praxis-Hinweise</div>
+
+            <div class="acc">
+              <details open>
+                <summary>Wann ETPs „kosteneffizient“ wirken <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  Für häufiges Rebalancing oder kleinere Stückelung sind ETPs oft praktisch:
+                  kein Versand/Schließfach – dafür <b>Produktkosten + Börsenspread</b>.
+                </div>
+              </details>
+
+              <details>
+                <summary>Was du im Factsheet prüfen solltest <span class="kbd">+</span></summary>
+                <div class="detailsBody">
+                  <ul>
+                    <li>Laufende Gebühren / TER / sonstige Kosten</li>
+                    <li>Hinterlegung (physisch/derivativ), Verwahrstelle</li>
+                    <li>Auslieferungsoptionen & Gebühren (falls relevant)</li>
+                    <li>Handelsplatz-Spreads & Liquidität</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="card section" id="preise">
-      <h2>Preise</h2>
-      <div class="pricing">
-        <div class="plan">
-          <span class="tag">Starter</span>
-          <div class="price">9€</div>
-          <div style="color:var(--muted)">pro Monat (für die Aura)</div>
-          <ul class="list">
-            <li>✅ 1× “Motivations-Ping”/Woche</li>
-            <li>✅ Zugang zu 3 Charts</li>
-            <li>❌ Keine Ausreden-Bibliothek</li>
-          </ul>
-          <div class="ctaRow" style="margin-top:12px">
-            <a class="btn" href="#top">Auswählen</a>
-          </div>
-        </div>
-
-        <div class="plan" style="border-color:rgba(255,211,106,.35)">
-          <span class="tag">Pro</span>
-          <div class="price">49€</div>
-          <div style="color:var(--muted)">pro Monat (für den “Sniper-Entry”)</div>
-          <ul class="list">
-            <li>✅ 24/7 Discord-Vibes</li>
-            <li>✅ “London Session” Ritual</li>
-            <li>✅ 1× PDF mit großen Pfeilen</li>
-          </ul>
-          <div class="ctaRow" style="margin-top:12px">
-            <a class="ctaPrimary" href="#top">Am beliebtesten →</a>
-          </div>
-        </div>
-
-        <div class="plan">
-          <span class="tag">Ultra</span>
-          <div class="price">199€</div>
-          <div style="color:var(--muted)">pro Monat (für Legendenstatus)</div>
-          <ul class="list">
-            <li>✅ Alles aus Pro</li>
-            <li>✅ Persönlicher “Mindset-Reminder”</li>
-            <li>✅ Gold-Wort des Tages: “Hedge”</li>
-          </ul>
-          <div class="ctaRow" style="margin-top:12px">
-            <a class="btn" href="#top">Ich bin bereit</a>
-          </div>
-        </div>
+    <!-- SECTION: DIAGRAMS -->
+    <section id="diagramme" class="section">
+      <div class="sectionHeader">
+        <h2>Diagramme</h2>
+        <div class="hint">Beispielhafte Visualisierung der Kostenblöcke (keine Live-Daten)</div>
       </div>
 
-      <div class="divider"></div>
+      <div class="grid2">
+        <!-- Chart 1: Donut -->
+        <div class="chartWrap">
+          <div class="chartTitle">
+            <b>Physischer Kauf: typische Kostenblöcke</b>
+            <span class="badge"><span class="miniDot" style="background:var(--a3)"></span> Beispiel-Anteile</span>
+          </div>
+          <div class="chartNote" style="margin-top:6px;">
+            Donut zeigt relative Gewichtung (Premium/Spread meist dominierend). Du kannst die Werte unten im Estimator überschreiben.
+          </div>
 
-      <h2>FAQ</h2>
-      <div class="split">
-        <div class="quote">
-          <p><b>Ist das echte Finanzberatung?</b><br/>Nein. Das ist Satire. Für echte Infos: seriöse Bildungsquellen, Risikohinweise, ggf. lizensierte Beratung.</p>
-        </div>
-        <div class="quote">
-          <p><b>Werde ich reich?</b><br/>Du wirst höchstens reich an Erkenntnis. Gewinne sind nie garantiert.</p>
-        </div>
-      </div>
+          <!-- Simple donut (SVG) -->
+          <svg viewBox="0 0 320 200" width="100%" height="240" aria-label="Donut Chart physische Kosten" style="margin-top:10px;">
+            <!-- background ring -->
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="18"/>
+            <!-- segments: circumference ~ 389.6 -->
+            <!-- Segment 1: Premium/Aufgeld 45% -->
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(245,158,11,.92)" stroke-width="18"
+                    stroke-linecap="round"
+                    stroke-dasharray="175 389.6" stroke-dashoffset="0"
+                    transform="rotate(-90 120 110)"/>
+            <!-- Segment 2: Händler-Spread 35% -->
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(34,211,238,.92)" stroke-width="18"
+                    stroke-linecap="round"
+                    stroke-dasharray="136 389.6" stroke-dashoffset="-180"
+                    transform="rotate(-90 120 110)"/>
+            <!-- Segment 3: Versand/Versicherung 10% -->
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(139,92,246,.92)" stroke-width="18"
+                    stroke-linecap="round"
+                    stroke-dasharray="39 389.6" stroke-dashoffset="-320"
+                    transform="rotate(-90 120 110)"/>
+            <!-- Segment 4: Lagerung/sonst. 10% -->
+            <circle cx="120" cy="110" r="62" fill="none" stroke="rgba(52,211,153,.92)" stroke-width="18"
+                    stroke-linecap="round"
+                    stroke-dasharray="39 389.6" stroke-dashoffset="-360"
+                    transform="rotate(-90 120 110)"/>
 
-      <div class="footer">
-        © <span id="year"></span> MarvinTeach™ — Satire/Parodie. <br/>
-        Kein Angebot, keine Anlageberatung, keine Garantien. Trading ist risikoreich und kann zum Totalverlust führen.
+            <!-- center text -->
+            <text x="120" y="108" text-anchor="middle" fill="rgba(234,240,255,.92)" font-size="14" font-weight="900">PHYSISCH</text>
+            <text x="120" y="128" text-anchor="middle" fill="rgba(234,240,255,.62)" font-size="12">Kostenblöcke</text>
+
+            <!-- legend right -->
+            <g transform="translate(210 40)" font-size="12" fill="rgba(234,240,255,.78)">
+              <rect x="0" y="0" width="10" height="10" rx="2" fill="rgba(245,158,11,.92)"></rect>
+              <text x="16" y="10">Premium/Aufgeld (~45%)</text>
+
+              <rect x="0" y="22" width="10" height="10" rx="2" fill="rgba(34,211,238,.92)"></rect>
+              <text x="16" y="32">Händler-Spread (~35%)</text>
+
+              <rect x="0" y="44" width="10" height="10" rx="2" fill="rgba(139,92,246,.92)"></rect>
+              <text x="16" y="54">Versand/Versich. (~10%)</text>
+
+              <rect x="0" y="66" width="10" height="10" rx="2" fill="rgba(52,211,153,.92)"></rect>
+              <text x="16" y="76">Lagerung/sonst. (~10%)</text>
+            </g>
+          </svg>
+
+          <div class="chartNote">
+            Tipp: Wenn du physisch kaufst, ist der „Break-Even“ häufig zuerst das Schließen von <b>Premium + Spread</b>.
+          </div>
+        </div>
+
+        <!-- Chart 2: Stacked bars -->
+        <div class="chartWrap">
+          <div class="chartTitle">
+            <b>Vergleich: „Wo entstehen Kosten?“</b>
+            <span class="badge"><span class="miniDot" style="background:var(--a2)"></span> Strukturvergleich</span>
+          </div>
+          <div class="chartNote" style="margin-top:6px;">
+            Stacked Bars zeigen typische Kostenquellen (keine Prozente, nur „Gewichtung“).
+          </div>
+
+          <svg viewBox="0 0 520 240" width="100%" height="260" aria-label="Stacked Bars Kostenstruktur" style="margin-top:10px;">
+            <!-- axes labels -->
+            <g fill="rgba(234,240,255,.70)" font-size="12">
+              <text x="60" y="28">Forex</text>
+              <text x="230" y="28">Physisch</text>
+              <text x="410" y="28">ETC/ETP</text>
+            </g>
+
+            <!-- Bar backgrounds -->
+            <g>
+              <rect x="50"  y="50" width="110" height="160" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)"/>
+              <rect x="220" y="50" width="110" height="160" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)"/>
+              <rect x="400" y="50" width="110" height="160" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)"/>
+            </g>
+
+            <!-- Forex stack (example) -->
+            <rect x="62" y="168" width="86" height="32" rx="10" fill="rgba(34,211,238,.92)"/>  <!-- spread -->
+            <rect x="62" y="126" width="86" height="38" rx="10" fill="rgba(139,92,246,.92)"/>  <!-- commission -->
+            <rect x="62" y="82"  width="86" height="40" rx="10" fill="rgba(245,158,11,.92)"/>  <!-- overnight -->
+            <rect x="62" y="60"  width="86" height="18" rx="10" fill="rgba(52,211,153,.92)"/>  <!-- slippage -->
+
+            <!-- Physical stack -->
+            <rect x="232" y="160" width="86" height="40" rx="10" fill="rgba(245,158,11,.92)"/> <!-- premium -->
+            <rect x="232" y="112" width="86" height="44" rx="10" fill="rgba(34,211,238,.92)"/> <!-- dealer spread -->
+            <rect x="232" y="78"  width="86" height="30" rx="10" fill="rgba(139,92,246,.92)"/> <!-- shipping/ins -->
+            <rect x="232" y="60"  width="86" height="16" rx="10" fill="rgba(52,211,153,.92)"/> <!-- storage -->
+
+            <!-- ETP stack -->
+            <rect x="412" y="166" width="86" height="34" rx="10" fill="rgba(34,211,238,.92)"/> <!-- exchange spread -->
+            <rect x="412" y="124" width="86" height="38" rx="10" fill="rgba(139,92,246,.92)"/> <!-- order fee -->
+            <rect x="412" y="82"  width="86" height="40" rx="10" fill="rgba(245,158,11,.92)"/> <!-- product fee -->
+            <rect x="412" y="60"  width="86" height="18" rx="10" fill="rgba(52,211,153,.92)"/> <!-- tracking/other -->
+
+            <!-- legend -->
+            <g transform="translate(50 220)" font-size="12" fill="rgba(234,240,255,.78)">
+              <rect x="0" y="0" width="10" height="10" rx="2" fill="rgba(34,211,238,.92)"></rect>
+              <text x="16" y="10">Spread</text>
+
+              <rect x="90" y="0" width="10" height="10" rx="2" fill="rgba(139,92,246,.92)"></rect>
+              <text x="106" y="10">Kommission/Order</text>
+
+              <rect x="230" y="0" width="10" height="10" rx="2" fill="rgba(245,158,11,.92)"></rect>
+              <text x="246" y="10">Overnight/Premium/Produkt</text>
+
+              <rect x="430" y="0" width="10" height="10" rx="2" fill="rgba(52,211,153,.92)"></rect>
+              <text x="446" y="10">Slippage/Lagerung/sonst.</text>
+            </g>
+          </svg>
+
+          <div class="chartNote">
+            Merksatz: <b>Forex</b> ist oft „Trade-Frequenz-sensitiv“ (Spread/Slippage), <b>physisch</b> eher „Ein-/Ausstieg-sensitiv“
+            (Premium/Spread), <b>ETP</b> eher „Depot-sensitiv“ (Order + laufende Produktkosten).
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- SECTION: ESTIMATOR -->
+    <section id="rechner" class="section">
+      <div class="sectionHeader">
+        <h2>Kosten-Estimator</h2>
+        <div class="hint">Grobe Rechnung, damit Leute ein Gefühl bekommen (ohne echte Marktpreise)</div>
+      </div>
+
+      <div class="box">
+        <div class="badge"><span class="miniDot" style="background:var(--a2)"></span> Eingaben (Beispielwerte anpassen)</div>
+
+        <div class="form">
+          <div>
+            <label for="mode">Modus</label>
+            <select id="mode">
+              <option value="forex">Forex Trade (Spread + Kommission + Overnight)</option>
+              <option value="phys">Physisch (Premium + Händler-Spread + Versand + Lagerung)</option>
+              <option value="etp">ETC/ETP (Order + Börsen-Spread + Produktkosten)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="amount">Volumen / Wert (€)</label>
+            <input id="amount" type="number" value="1000" min="0" step="10" />
+          </div>
+
+          <div>
+            <label for="days">Haltedauer (Tage)</label>
+            <input id="days" type="number" value="7" min="0" step="1" />
+          </div>
+
+          <div>
+            <label for="spreadPct">Spread / Händler-Spread (%)</label>
+            <input id="spreadPct" type="number" value="0.20" min="0" step="0.01" />
+          </div>
+
+          <div>
+            <label for="feeFixed">Fixe Gebühren (€) (Order/Versand/etc.)</label>
+            <input id="feeFixed" type="number" value="5" min="0" step="0.50" />
+          </div>
+
+          <div>
+            <label for="ratePct">Overnight / Produktkosten p.a. (%)</label>
+            <input id="ratePct" type="number" value="3.00" min="0" step="0.10" />
+          </div>
+
+          <div>
+            <label for="premiumPct">Premium/Aufgeld (%) (physisch)</label>
+            <input id="premiumPct" type="number" value="2.50" min="0" step="0.10" />
+          </div>
+
+          <div>
+            <label for="commissionPct">Kommission (%) (Forex/Raw)</label>
+            <input id="commissionPct" type="number" value="0.05" min="0" step="0.01" />
+          </div>
+
+          <div>
+            <label for="storagePct">Lagerung p.a. (%) (physisch)</label>
+            <input id="storagePct" type="number" value="0.60" min="0" step="0.10" />
+          </div>
+        </div>
+
+        <div class="calcRow">
+          <button class="btn" id="calcBtn">Kosten berechnen</button>
+          <div class="result" id="out">
+            Gib Werte ein und klicke <b>„Kosten berechnen“</b>.
+            <div style="margin-top:6px; color:rgba(234,240,255,.55)">
+              Tipp: <span class="kbd">Modus</span> wählen → Werte realistisch setzen (z. B. Spread 0.1–1.0% je nach Produkt/Markt).
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <b>Disclaimer:</b> Rechenmodell ist stark vereinfacht. Keine Garantie, keine Beratung.
+          Für echte Kosten: Broker-Preisverzeichnis / Händler-Konditionen / Produkt-Factsheet prüfen.
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      © <span id="year"></span> MarvinTeach. Educational content only. Kein Angebot, keine Anlageberatung.
+    </div>
   </div>
 
   <script>
-    // kleiner Qualitäts-Touch
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Tabs
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+    tabs.forEach(t => {
+      t.addEventListener("click", () => {
+        tabs.forEach(x => x.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+        t.classList.add("active");
+        document.getElementById(t.dataset.tab).classList.add("active");
+      });
+    });
+
+    // Estimator
+    const mode = document.getElementById("mode");
+    const amount = document.getElementById("amount");
+    const days = document.getElementById("days");
+    const spreadPct = document.getElementById("spreadPct");
+    const feeFixed = document.getElementById("feeFixed");
+    const ratePct = document.getElementById("ratePct");
+    const premiumPct = document.getElementById("premiumPct");
+    const commissionPct = document.getElementById("commissionPct");
+    const storagePct = document.getElementById("storagePct");
+    const out = document.getElementById("out");
+
+    function eur(x){
+      return x.toLocaleString("de-DE", { style:"currency", currency:"EUR" });
+    }
+
+    function calc(){
+      const A = Math.max(0, Number(amount.value || 0));
+      const D = Math.max(0, Number(days.value || 0));
+
+      const sp = Math.max(0, Number(spreadPct.value || 0)) / 100;
+      const ff = Math.max(0, Number(feeFixed.value || 0));
+      const rp = Math.max(0, Number(ratePct.value || 0)) / 100;
+      const pp = Math.max(0, Number(premiumPct.value || 0)) / 100;
+      const cp = Math.max(0, Number(commissionPct.value || 0)) / 100;
+      const lp = Math.max(0, Number(storagePct.value || 0)) / 100;
+
+      // Helper: annual rate to daily (simple, not compounding)
+      const daily = (annualPct) => (annualPct / 365) * D;
+
+      let costSpread = 0, costFixed = 0, costCarry = 0, costOther = 0, total = 0;
+      let headline = "";
+
+      if(mode.value === "forex"){
+        // simplified:
+        // Spread + Commission as percentage of notional, plus financing as annualized for days, plus fixed fees
+        costSpread = A * sp;
+        costOther  = A * cp;
+        costCarry  = A * daily(rp);
+        costFixed  = ff;
+        total = costSpread + costOther + costCarry + costFixed;
+        headline = "Forex (vereinfachtes Modell)";
+      }
+
+      if(mode.value === "phys"){
+        // Physical:
+        // Premium + dealer spread + fixed shipping, plus storage annualized
+        costSpread = A * sp;     // dealer spread
+        costOther  = A * pp;     // premium/aufgeld
+        costCarry  = A * daily(lp); // storage annualized
+        costFixed  = ff;         // shipping/insurance etc.
+        total = costSpread + costOther + costCarry + costFixed;
+        headline = "Physische Edelmetalle (vereinfachtes Modell)";
+      }
+
+      if(mode.value === "etp"){
+        // ETP:
+        // Exchange spread + fixed order, plus product annualized
+        costSpread = A * sp;
+        costFixed  = ff;
+        costCarry  = A * daily(rp); // product cost annualized
+        total = costSpread + costFixed + costCarry;
+        headline = "ETC/ETP (vereinfachtes Modell)";
+      }
+
+      const pct = (A > 0) ? (total / A) : 0;
+
+      out.innerHTML = `
+        <div style="font-weight:900; color:rgba(234,240,255,.92); margin-bottom:6px;">${headline}</div>
+        <div style="color:rgba(234,240,255,.70);">
+          <b>Wert/Volumen:</b> ${eur(A)} • <b>Haltedauer:</b> ${D} Tage
+        </div>
+        <div style="margin-top:8px; color:rgba(234,240,255,.78); line-height:1.7;">
+          <div>• Spread/Händler-Spread: <b>${eur(costSpread)}</b></div>
+          <div>• Fixe Gebühren: <b>${eur(costFixed)}</b></div>
+          ${mode.value === "forex" ? `<div>• Kommission: <b>${eur(costOther)}</b></div>` : ""}
+          ${mode.value === "phys"  ? `<div>• Premium/Aufgeld: <b>${eur(costOther)}</b></div>` : ""}
+          <div>• Laufende Kosten (Tage): <b>${eur(costCarry)}</b></div>
+          <div style="margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,.10);">
+            <b>Gesamtkosten:</b> <span style="color:rgba(34,211,238,.92); font-weight:900;">${eur(total)}</span>
+            <span style="color:rgba(234,240,255,.55);">(${(pct*100).toFixed(2)}% vom Wert)</span>
+          </div>
+        </div>
+        <div style="margin-top:10px; color:rgba(234,240,255,.55); font-size:12px; line-height:1.6;">
+          Hinweis: Das ist eine grobe Orientierung. Echte Kosten können durch Marktbedingungen, Ordertyp,
+          Ausführung, Steuer & Anbieterregeln abweichen.
+        </div>
+      `;
+    }
+
+    document.getElementById("calcBtn").addEventListener("click", calc);
+
+    // Optional: auto-update on changes (feel more premium)
+    const inputs = [mode, amount, days, spreadPct, feeFixed, ratePct, premiumPct, commissionPct, storagePct];
+    inputs.forEach(i => i.addEventListener("input", () => {
+      // only update after first calc to keep UI clean:
+      if(out.dataset.didcalc === "1") calc();
+    }));
+    document.getElementById("calcBtn").addEventListener("click", () => out.dataset.didcalc = "1");
   </script>
 </body>
 </html>
-<script src="script.js"></script>
