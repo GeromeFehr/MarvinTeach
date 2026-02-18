@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MarvinTeach™ — Forex & Gold Masterclass (Satire)</title>
+  <meta name="description" content="MarvinTeach™ (Satire) – Eine professionell aussehende Parodie auf Trading-Gurus: Forex, Gold & 'Mindset' – mit Augenzwinkern." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --muted:#9fb0d0;
+      --text:#eaf0ff;
+      --line:rgba(255,255,255,.08);
+      --accent:#78a6ff;
+      --accent2:#ffd36a;
+      --good:#2ee59d;
+      --bad:#ff6b6b;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 20% 0%, rgba(120,166,255,.22), transparent 60%),
+                                   radial-gradient(900px 500px at 80% 10%, rgba(255,211,106,.16), transparent 60%),
+                                   var(--bg);
+              color:var(--text); font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(120,166,255,.95), rgba(255,211,106,.95));
+      box-shadow:0 10px 25px rgba(120,166,255,.18);
+      display:grid;place-items:center;font-weight:900;color:#0b1220;
+    }
+    .navlinks{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .pill{padding:10px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--muted)}
+    .pill:hover{border-color:rgba(120,166,255,.45);color:var(--text)}
+    .btn{
+      padding:11px 14px;border-radius:999px;border:1px solid rgba(120,166,255,.45);
+      background:linear-gradient(135deg, rgba(120,166,255,.18), rgba(255,211,106,.08));
+      text-decoration:none; display:inline-flex; gap:8px; align-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.2);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch;margin-top:16px}
+    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:22px; position:relative; overflow:hidden;
+    }
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:9px 12px;border-radius:999px;border:1px dashed rgba(255,211,106,.55);
+      color:#ffe7a8;background:rgba(255,211,106,.08);
+      font-size:13px;
+    }
+    h1{font-size:44px;line-height:1.05;margin:14px 0 10px}
+    @media (max-width: 540px){ h1{font-size:36px} }
+    .sub{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 16px}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .ctaPrimary{
+      background:linear-gradient(135deg, rgba(120,166,255,.95), rgba(255,211,106,.85));
+      color:#0b1220; font-weight:800; border:none; padding:12px 16px; border-radius:999px;
+      text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+      box-shadow:0 18px 50px rgba(120,166,255,.20);
+    }
+    .ctaSecondary{color:var(--text)}
+    .tiny{font-size:12px;color:rgba(234,240,255,.65);line-height:1.5;margin-top:10px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
+    .kpi{padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.16)}
+    .kpi b{display:block;font-size:20px;margin-bottom:6px}
+    .kpi span{color:var(--muted);font-size:13px}
+    .side{
+      background:linear-gradient(180deg, rgba(15,27,51,.85), rgba(15,27,51,.55));
+      border:1px solid var(--line); border-radius:var(--radius); padding:22px;
+    }
+    .meter{margin-top:12px;padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.18)}
+    .meterTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
+    .fill{height:100%;width:72%;background:linear-gradient(90deg, rgba(120,166,255,.9), rgba(46,229,157,.8))}
+    .section{margin-top:22px}
+    .section h2{margin:0 0 10px;font-size:22px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width: 920px){ .features{grid-template-columns:1fr} }
+    .feature{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.14)}
+    .feature .icon{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;
+      background:rgba(120,166,255,.14);border:1px solid rgba(120,166,255,.25); margin-bottom:10px}
+    .feature p{margin:6px 0 0;color:var(--muted);line-height:1.6}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width: 920px){ .split{grid-template-columns:1fr} }
+    .quote{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.14)}
+    .quote p{margin:0;color:var(--muted);line-height:1.6}
+    .quote b{display:block;margin-top:10px}
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width: 920px){ .pricing{grid-template-columns:1fr} }
+    .plan{padding:18px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.16)}
+    .price{font-size:28px;font-weight:900;margin:10px 0}
+    .list{margin:12px 0 0;padding:0;list-style:none;color:var(--muted);line-height:1.9}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px}
+    .footer{margin:26px 0 10px;color:rgba(234,240,255,.65);font-size:12px;line-height:1.6}
+    .divider{height:1px;background:var(--line);margin:18px 0}
+    .warn{
+      border-left:4px solid var(--accent2);
+      padding:12px 12px 12px 14px;
+      background:rgba(255,211,106,.08);
+      border-radius:14px;
+      color:rgba(255,245,220,.95);
+      font-size:13px; line-height:1.55;
+    }
+    .kbd{
+      font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      background:rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      padding:2px 7px;border-radius:8px;color:rgba(234,240,255,.85)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="MarvinTeach">
+        <div class="logo">MT</div>
+        <div>
+          <div style="font-weight:900;letter-spacing:.2px">MarvinTeach™</div>
+          <div style="color:var(--muted);font-size:12px;margin-top:2px">Forex • Gold • “Mindset” (Satire)</div>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a class="pill" href="#kurs">Kurs</a>
+        <a class="pill" href="#resultate">Resultate</a>
+        <a class="pill" href="#preise">Preise</a>
+        <a class="btn" href="#cta">Kostenloses “Alpha”-PDF ▸</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section class="card">
+        <span class="badge">⚠️ Parodie / Satire • Keine echte Finanzberatung</span>
+        <h1>Trade Forex. Staple Gold. <br/>Werde die Legende in deinem Discord.</h1>
+        <p class="sub">
+          Willkommen bei <b>MarvinTeach™</b>: Eine professionell aussehende (aber humorvolle) Seite über “Forex & Edelmetalle”.
+          Hier lernst du die heiligen drei Regeln: <span class="kbd">Risk</span>, <span class="kbd">Disziplin</span>, <span class="kbd">Memes</span>.
+        </p>
+
+        <div class="ctaRow" id="cta">
+          <a class="ctaPrimary" href="#preise">Jetzt “Mentoring” sichern →</a>
+          <a class="btn ctaSecondary" href="#kurs">Curriculum ansehen</a>
+        </div>
+
+        <div class="grid">
+          <div class="kpi">
+            <b>+0.01%</b>
+            <span>Durchschnittliche “Performance” pro Woche*<br/><small>* gemessen in Hoffnung.</small></span>
+          </div>
+          <div class="kpi">
+            <b>24/7</b>
+            <span>Mindset-Support (Auto-Reply)</span>
+          </div>
+          <div class="kpi">
+            <b>∞</b>
+            <span>Ausreden, warum der Trade “eigentlich gut war”</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="warn">
+          <b>Wichtig:</b> Diese Seite ist als <b>Satire/Parodie</b> gedacht. Kein Echtgeld-Rat, keine “Garantien”.
+          Wenn du echte Finanzbildung willst: nutze seriöse Quellen, lies Risikohinweise, und sei skeptisch bei “sicheren Gewinnen”.
+        </div>
+
+        <p class="tiny">
+          “Forex” und “Gold” werden hier absichtlich überspitzt dargestellt. <br/>
+          Für echte Entscheidungen: unabhängige Recherche, Kosten & Risiken verstehen.
+        </p>
+      </section>
+
+      <aside class="side">
+        <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
+          <div>
+            <div class="tag">LIVE: “London Session”</div>
+            <h2 style="margin:12px 0 6px">Marvin’s Signal-Board</h2>
+            <div style="color:var(--muted);line-height:1.6">
+              Ein Dashboard, das so aussieht, als würde hier Magie passieren.
+              In Wahrheit: <b>Konfetti + Charts</b>.
+            </div>
+          </div>
+          <div class="tag" title="Satire">🧪 Beta</div>
+        </div>
+
+        <div class="meter">
+          <div class="meterTop">
+            <b>Confidence-Index</b>
+            <span style="color:var(--good);font-weight:800">72%</span>
+          </div>
+          <div class="bar"><div class="fill"></div></div>
+          <div style="color:var(--muted);font-size:12px;margin-top:10px">
+            Je mehr Kerzen, desto mehr Meinung.
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 id="kurs">Curriculum</h2>
+          <div class="features">
+            <div class="feature">
+              <div class="icon">📈</div>
+              <b>Forex Basics</b>
+              <p>Spreads, Pips & warum “Hebel” ein gefährliches Wort ist.</p>
+            </div>
+            <div class="feature">
+              <div class="icon">🪙</div>
+              <b>Edelmetalle</b>
+              <p>Gold/Silber als “Investment” – plus die mythische Frage: Wo lagern wir das eigentlich?</p>
+            </div>
+            <div class="feature">
+              <div class="icon">🧠</div>
+              <b>Mindset</b>
+              <p>Disziplin, Risiko & die Kunst, nicht jedem TikTok-Chart zu glauben.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Freebie</h2>
+          <div class="quote">
+            <p><b>“Alpha-PDF: 7 Kerzen, 7 Wahrheiten”</b><br/>
+            Drücke <span class="kbd">Strg</span> + <span class="kbd">S</span>, speichere diese Seite und nenne es “Research”.</p>
+            <b style="margin-top:10px">Preis: 0€ • Wert: dramatisch</b>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="card section" id="resultate" style="margin-top:18px">
+      <h2>Resultate (mit Augenzwinkern)</h2>
+      <div class="split">
+        <div class="quote">
+          <p>“Ich hab endlich verstanden, dass ich nichts verstanden habe. 10/10.”</p>
+          <b>— Kevin, “Scalper”</b>
+        </div>
+        <div class="quote">
+          <p>“Seit MarvinTeach weiß ich: Der Markt ist gegen mich. Das ist beruhigend.”</p>
+          <b>— Lara, Gold-Hodlerin</b>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">🧾</div>
+          <b>Risikomanagement</b>
+          <p>Stop-Loss ist nicht “optional”, sondern dein Sicherheitsgurt.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🕵️</div>
+          <b>Scam-Detektor</b>
+          <p>Wenn jemand “garantiert” sagt: lauf. Wenn er “100x Hebel” sagt: lauf schneller.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🧯</div>
+          <b>Reality-Check</b>
+          <p>Charts sind kein Schicksal, sondern Daten + Wahrscheinlichkeit + Emotionen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section" id="preise">
+      <h2>Preise</h2>
+      <div class="pricing">
+        <div class="plan">
+          <span class="tag">Starter</span>
+          <div class="price">9€</div>
+          <div style="color:var(--muted)">pro Monat (für die Aura)</div>
+          <ul class="list">
+            <li>✅ 1× “Motivations-Ping”/Woche</li>
+            <li>✅ Zugang zu 3 Charts</li>
+            <li>❌ Keine Ausreden-Bibliothek</li>
+          </ul>
+          <div class="ctaRow" style="margin-top:12px">
+            <a class="btn" href="#top">Auswählen</a>
+          </div>
+        </div>
+
+        <div class="plan" style="border-color:rgba(255,211,106,.35)">
+          <span class="tag">Pro</span>
+          <div class="price">49€</div>
+          <div style="color:var(--muted)">pro Monat (für den “Sniper-Entry”)</div>
+          <ul class="list">
+            <li>✅ 24/7 Discord-Vibes</li>
+            <li>✅ “London Session” Ritual</li>
+            <li>✅ 1× PDF mit großen Pfeilen</li>
+          </ul>
+          <div class="ctaRow" style="margin-top:12px">
+            <a class="ctaPrimary" href="#top">Am beliebtesten →</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <span class="tag">Ultra</span>
+          <div class="price">199€</div>
+          <div style="color:var(--muted)">pro Monat (für Legendenstatus)</div>
+          <ul class="list">
+            <li>✅ Alles aus Pro</li>
+            <li>✅ Persönlicher “Mindset-Reminder”</li>
+            <li>✅ Gold-Wort des Tages: “Hedge”</li>
+          </ul>
+          <div class="ctaRow" style="margin-top:12px">
+            <a class="btn" href="#top">Ich bin bereit</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>FAQ</h2>
+      <div class="split">
+        <div class="quote">
+          <p><b>Ist das echte Finanzberatung?</b><br/>Nein. Das ist Satire. Für echte Infos: seriöse Bildungsquellen, Risikohinweise, ggf. lizensierte Beratung.</p>
+        </div>
+        <div class="quote">
+          <p><b>Werde ich reich?</b><br/>Du wirst höchstens reich an Erkenntnis. Gewinne sind nie garantiert.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        © <span id="year"></span> MarvinTeach™ — Satire/Parodie. <br/>
+        Kein Angebot, keine Anlageberatung, keine Garantien. Trading ist risikoreich und kann zum Totalverlust führen.
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // kleiner Qualitäts-Touch
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
